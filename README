@@ -1,0 +1,15 @@
+The script "ConvertSalamanderDataToExcel.pl" goes through a raw data file looking for sensor serial numbers. When a sensor is found, the script translates the four data bytes into temperatures and voltages (depending on the sensor type). It generates a "timestamp" but you have to go into the script and set a fixed time between samples based on what you programmed the sensors to do.  
+
+Currently the script contains most of the sensor IDs we have ever created, and we are still making more, so this is going to be replaced by a database. However, the script works fine for small collections of sensors (say 100 different sensors)
+
+To run the script on your files, put your text files in a folder called ProcessMe. Put the ProcessMe folder in the same directory as the ConvertSalamanderDataToExcel.pl script. 
+
+A sample ProcessMe folder, "ProcessMe_SampleData.zip" is included. You'll have to unzip and rename this to ProcessMe if you want to practice running the script on it. Use these example files to see if your files are in the right format for processing.
+
+To be clear: don't put the script inside the ProcessMe folder, put it in a directory alongside the ProcessMe folder.
+
+Then navigate to the folder in a terminal window and type
+
+perl ConvertSalamanderDataToExcel.pl
+
+This will work on all .txt files inside the ProcessMe folder and create a corresponding Excel-readable .csv file with the same name inside the ProcessMe folder.
